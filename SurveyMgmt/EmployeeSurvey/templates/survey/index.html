@@ -1,0 +1,16 @@
+{% extends "survey/base.html" %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+
+    <h3>Welcome to survey management</h3>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+        <li><a href="{% url 'survey:my_surveys' %}">survey</a></li>
+
+    {% else %}
+        <h2>Please Login or Register..!!!</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

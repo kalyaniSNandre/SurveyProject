@@ -1,0 +1,17 @@
+{% extends "survey/base.html" %}
+{% block body_block %}
+<h1>Welcome to Survey</h1>
+{% if UsersSurveys %}
+    <ol>
+      {% for survey in UsersSurveys %}
+      <h2>
+          <li>
+            <a href="{{survey.survey_id}}">{{survey.survey.name}}</a>
+          </li>
+      </h2>
+      {% endfor %}
+    </ol>
+{% else %}
+      <p>There are no surveys.</p>
+{% endif %}
+{% endblock %}
